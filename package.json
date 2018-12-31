@@ -1,0 +1,24 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "A REST API implementation using: * Express.js * MongoDB * A bit of ReactJS at the end",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyluck/node-rest-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luckyluck/node-rest-api/issues"
+  },
+  "homepage": "https://github.com/luckyluck/node-rest-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  },
+  "keywords": ["Node.js", "Express.js", "REST API"]
+}
