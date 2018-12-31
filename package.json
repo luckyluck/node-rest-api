@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/luckyluck/node-rest-api#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
     "nodemon": "^1.18.9"
   },
   "keywords": ["Node.js", "Express.js", "REST API"]

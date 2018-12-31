@@ -1,13 +1,15 @@
 const express = require('express');
 
+const keys = require('./config/keys');
+const routes = require('./routes/api');
+
 // Set up Express app
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('OK');
-});
+// Initialize routes
+app.use('/api', routes);
 
 // Listen for requests
-app.listen(process.env.port || 4000, () => {
-    console.log('Listening port 4000');
+app.listen(process.env.port || 4001, () => {
+    console.log('Listening port 4001');
 });
