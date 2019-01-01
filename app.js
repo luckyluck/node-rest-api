@@ -14,6 +14,7 @@ mongoose.connect(keys.mongodb.url, { useNewUrlParser: true }, () => {
 });
 // Turn off deprecation
 mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 app.use(bodyParser.json());
 // Initialize routes
