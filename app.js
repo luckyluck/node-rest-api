@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const keys = require('./config/keys');
 const routes = require('./routes/api');
@@ -6,6 +7,7 @@ const routes = require('./routes/api');
 // Set up Express app
 const app = express();
 
+app.use(bodyParser.json());
 // Initialize routes
 app.use('/api', routes);
 
