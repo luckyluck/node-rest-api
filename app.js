@@ -12,6 +12,8 @@ const app = express();
 mongoose.connect(keys.mongodb.url, { useNewUrlParser: true }, () => {
     console.log('Connected to the DB');
 });
+// Turn off deprecation
+mongoose.set('useFindAndModify', false);
 
 app.use(bodyParser.json());
 // Initialize routes
