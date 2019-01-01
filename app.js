@@ -16,6 +16,8 @@ mongoose.connect(keys.mongodb.url, { useNewUrlParser: true }, () => {
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
 // Initialize routes
 app.use('/api', routes);
