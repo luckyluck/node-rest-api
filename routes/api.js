@@ -5,7 +5,21 @@ const Ninja = require('../models/ninja');
 
 // Get a list of ninjas from the DB
 router.get('/ninjas', (req, res, next) => {
-    res.send({ type: 'GET' });
+    const { lng, lat } = req.query;
+    // maxDistance in meters for GeoJSON
+    Ninja.aggregate([
+        {
+            $geoNear: {
+                type: 'Point',
+                near: [parseFloat(lng), parseFloat(lat)],
+                distanceField: 'dist.calculated',
+                maxDistance: 100000,
+                spherical: true
+            }
+        }
+    ]).then(ninjas => {
+        res.send(ninjas);
+    }).catch(next);
 });
 
 // Add a new ninja to the DB
